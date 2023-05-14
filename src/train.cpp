@@ -13,20 +13,17 @@ void Train::addCage(bool light) {
     item->light = light;
     item->next = nullptr;
     item->prev = nullptr;
-    CountForCage += 1;
     if (first == nullptr) {
         first = item;
-        CountForCage -= 1;
     } else {
         if (first->next == nullptr) {
             first->next = item;
             first->prev = item;
             item->next = first;
             item->prev = first;
-            CountForCage -= 1;
         } else {
             Cage *temp = first;
-            for (int i = 0; i < CountForCage; ++i) {
+            while (temp->next != first) {
                 temp = temp->next;
             }
             temp->next = item;
@@ -65,4 +62,17 @@ int Train::getLength() {
 }
 int Train::getOpCount() {
     return countOp;
+}
+
+int main() {
+    Train train;
+    int count = 500;
+
+    while (count--)
+        train.addCage(true);
+
+    int len = train.getLength();
+    int op = train.getOpCount();
+    std::cout << len << " " << op << std::endl;
+    return 0;
 }
