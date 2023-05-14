@@ -1,7 +1,7 @@
 // Copyright 2021 NNTU-CS
 #include "train.h"
 
-rain::Train() {
+Train::Train() {
     Cage *first = nullptr;
     countOp = 0;
 }
