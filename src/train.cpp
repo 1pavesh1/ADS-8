@@ -63,16 +63,3 @@ int Train::getLength() {
 int Train::getOpCount() {
     return countOp;
 }
-
-int main() {
-    Train train;
-    int count = 500;
-
-    while (count--)
-        train.addCage(true);
-
-    int len = train.getLength();
-    int op = train.getOpCount();
-    std::cout << len << " " << op << std::endl;
-    return 0;
-}
