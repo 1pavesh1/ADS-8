@@ -42,8 +42,7 @@ int Train::getLength() {
         item->light = true;
     }
     int result = 0;
-    while (true)
-    {
+    while (true) {
         item = item->next;
         countOp += 1;
         FirstCount += 1;
