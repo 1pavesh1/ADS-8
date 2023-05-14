@@ -19,10 +19,10 @@ void Train::addCage(bool light) {
         CountForCage -= 1;
     } else {
         if (first->next == nullptr) {
-            item->next = first;
-            item->prev = first;
             first->next = item;
             first->prev = item;
+            item->next = first;
+            item->prev = first;
             CountForCage -= 1;
         } else {
             Cage *temp = first;
