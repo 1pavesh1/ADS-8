@@ -1,12 +1,9 @@
 // Copyright 2021 NNTU-CS
 #include "train.h"
 
-Train::Train() {
+rain::Train() {
     Cage *first = nullptr;
     countOp = 0;
-    FirstCount = 0;
-    ThirdCount = 0;
-    CountForCage = 0;
 }
 void Train::addCage(bool light) {
     Cage *item = new Cage;
@@ -38,25 +35,26 @@ int Train::getLength() {
     if (item->light == false) {
         item->light = true;
     }
-    int result = 0;
+    int Result = 0;
+    int Counter = 0;
     while (1) {
         item = item->next;
         countOp += 1;
-        FirstCount += 1;
+        Counter += 1;
         while (item->light != true) {
             item = item->next;
             countOp += 1;
-            FirstCount += 1;
+            Counter += 1;
         }
         item->light = false;
-        result = FirstCount;
-        while (FirstCount != 0) {
+        Result = Counter;
+        while (Counter != 0) {
             countOp += 1;
-            FirstCount -= 1;
+            Counter -= 1;
             item = item->prev;
         }
         if (item->light == false) {
-            return result;
+            return Result;
         }
     }
 }
