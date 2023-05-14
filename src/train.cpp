@@ -2,7 +2,7 @@
 #include "train.h"
 
 Train::Train() {
-    Cage *first = nullptr;
+    first = nullptr;
     countOp = 0;
 }
 void Train::addCage(bool light) {
